@@ -1,5 +1,5 @@
 """
-Bradley Allen
+Guglio
 Quiz - 1 - problem-3.py
 """
 import datetime
