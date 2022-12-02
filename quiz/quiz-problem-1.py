@@ -1,5 +1,5 @@
 """
-Bradley Allen
+Guglio
 Quiz - 1 - problem-1.py
 """
 allRoyals = [ # list of all the royals
