@@ -1,5 +1,5 @@
 """
-Bradley Allen
+Guglio
 Quiz - 1 - problem-2.py
 """
 num = input("Please enter a number: ")
