@@ -1,0 +1,5 @@
+1. Create a GUI with a text field for the number of vrobits and a button to calculate the coins.
+2. When the button is clicked, get the number of vrobits from the text field.
+3. Calculate the number of each coin by dividing the number of vrobits by the value of each coin.
+4. Update the labels with the number of each coin and the leftover vrobits.
+5. Display the results in the GUI.
