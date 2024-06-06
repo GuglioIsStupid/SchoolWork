@@ -26,6 +26,7 @@ public class JavaCalculator {
             {"π", Math.PI + "" /* Converts to a string */}
     };
 
+    // Order of commands
     public static final String[] orderOfCommands = {
             "√",
             "l",
@@ -85,11 +86,12 @@ public class JavaCalculator {
     }
 
     // Check the precedence of the operators
+    // This is to make sure that the operators are applied in the correct orders
     public static boolean precedence(char op1, char op2) {
         String op1Str = String.valueOf(op1);
         String op2Str = String.valueOf(op2);
         
-        if (op2Str == "(" || op2Str == ")") {
+        if (op2Str == "(" || op2Str == ")") { // Parentheses have the highest precedence
             return false;
         }
 
@@ -157,20 +159,6 @@ public class JavaCalculator {
                 }
             }
 
-            // Loop through the remaining operators, if numbers has more than 1 element
-           /*  while (!operators.isEmpty()) {
-                // if its a ( or ) operator, pop it
-                if (operators.peek() == '(' || operators.peek() == ')') {
-                    operators.pop();
-                }
-                
-                if (numbers.size() > 1) {
-                    numbers.push(applyOperator(operators.pop(), numbers.pop(), numbers.pop()));
-                } else {
-                    numbers.push(applyOperator(operators.pop(), numbers.pop(), 0));
-                }
-            } */
-
             // solve in order of commands
             for (String command : orderOfCommands) {
                 for (int i = 0; i < operators.size(); i++) {
@@ -220,6 +208,7 @@ public class JavaCalculator {
             numberButtons[i].setFont(numberButtons[i].getFont().deriveFont(18f));
         }
 
+        // Setup our buttons
         functionButtons[0] = new JButton("+");
         functionButtons[1] = new JButton("-");
         functionButtons[2] = new JButton("*");
@@ -281,6 +270,7 @@ public class JavaCalculator {
             numberButtons[i].addActionListener(e -> textField.setText(textField.getText() + finalI));
         }
 
+        // Add the listeners to the function buttons
         functionButtons[0].addActionListener(e -> textField.setText(textField.getText() + "+"));
         functionButtons[1].addActionListener(e -> textField.setText(textField.getText() + "-"));
         functionButtons[2].addActionListener(e -> textField.setText(textField.getText() + "*"));
