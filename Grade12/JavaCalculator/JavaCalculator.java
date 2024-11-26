@@ -1,4 +1,4 @@
-// Guglio 28/05/2024 - 04/06/2024
+// 28/05/2024 - 04/06/2024
 // A "simple" calculator that can evaluate basic arithmetic expressions and trigonometric functions
 // Can't handle complex expressions all-to-well
 

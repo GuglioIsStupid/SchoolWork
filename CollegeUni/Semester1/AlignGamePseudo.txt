@@ -1,0 +1,100 @@
+boolean appRunning = true
+Scanner input
+
+int playerX = 0
+int playerY = 0
+int playerWidth = 5
+boolean playerMovingLeft = false
+
+int playerMinWidth = 1
+
+score = 0
+
+list of list holding strings for game board
+array list of blocks with java.util.ArrayList
+
+A thread for handling input
+
+createInputThread
+    Thread = (
+        while(appRunning)
+            try
+                if input.hasNextLine()
+                    line = input.nextLine
+                    if line.equals("exit")
+                        appRunning = false
+                    
+                    if blocks.size() >= 5
+                        blocks.remove(0)
+                        playerY++
+                        MoveAllBlocksDown
+
+                    CreateNewBlock
+
+                    Check if the block is supported properly
+                    if not, trim t
+            except
+                if an error occurs, print error and reloop
+
+    )
+
+alignGame
+    set all spaces in gameBoard to " "
+
+    set playerX to center of board
+    set playerY to bottom of board
+
+update
+    sleepTime is 1000 / 5, meaning 5hz
+
+    if playerMovingLeft, change x by -1
+    if right, change x by 1
+
+    create and update thread if needed
+
+render
+    clear the screen with escape chars and flushing
+
+    set all board pieces to " "
+
+    set player pieces to "P"
+
+    set all block pieces to "B"
+
+    print the board with .print
+    with each y change, use println with no args to print a new line
+
+run
+    while(appRunning)
+        update()
+        render()
+
+reset
+    playerX = 0
+    playerY = 0
+    playerWidth = 5
+    playerMovingLeft = false
+    score = 0
+    clear blocks
+
+main
+    game = Game()
+
+    char playAgain = 'y'
+    while (playerAgain == 'y')
+        game.alignGame()
+        game.run()
+
+        // If game reaches here, the game is over 
+
+        interrupt input thread
+
+        Output: Game over! Score: {score}
+        Output: Would you like to player again?
+
+        take input (y/n)
+        if y, recreate game context, and repeat loop
+
+    game.input.close
+
+    Output: Thanks for playing!

@@ -1,7 +1,6 @@
 # 12/09/2022 - ??/??/????
 
 # load our libraries
-from distutils.log import error
 from inspect import FullArgSpec
 import pygame as pg
 from modules.bullet import Bullet
@@ -15,12 +14,6 @@ import modules.math as math
 import math
 import random, os, sys
 import configparser
-try:
-    import psutil
-    psutilInstalled = True
-except:
-    print("psutil not found, please install it to use debug mode")
-    pass
 
 DEBUG = True # debug mode
 # try to import pywin32
@@ -29,7 +22,6 @@ try:
     import win32con
     import win32gui
 except ImportError:
-    error("pywin32 is not installed. Please install it.")
     quit()
 
 # define our gradient functions
@@ -167,8 +159,6 @@ def mainGame():
         if DEBUG:
             DEBUGSTR = f"""
             FPS: {int(clock.get_fps())}
-            CPU Usage: {int(psutil.cpu_percent())}%
-            RAM Usage: {int(psutil.virtual_memory().percent)}%
             """ # the debug string
             DEBUGSTRend = font.render(DEBUGSTR, True, (0, 0, 0))
         if curMenu() == "play":
@@ -447,15 +437,6 @@ if __name__ == "__main__":
     pg.mixer.Sound.set_volume(hurtSound, 0.8)
     pg.mixer.Sound.set_volume(diamondPling, 0.5)
     pg.mixer.music.set_volume(0.5)
-
-    if DEBUG:
-        if psutilInstalled:
-            print("DEBUG MODE")
-            print("Pygame Version: " + pg.version.ver)
-            print("Python Version: " + sys.version)
-            print("OS: " + sys.platform)
-        else:
-            DEBUG = False # force debug to be false if psutil is not installed
 
     # make 3 hearts each heart is 14x14
     heart = pg.image.load("assets/sprites/hearts.png")
