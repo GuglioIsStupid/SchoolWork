@@ -1,0 +1,32 @@
+Define guessedLetters to an empty string
+Define word to a random word from getRandomWord()
+
+Function getRandomWord()
+    Get a random number between 1 and 10
+    Return a word from a switch statement based on the random number
+
+Function fillInBlanks(word, guessedLetters)
+    Define result to an empty string
+    For each letter IN word
+        If letter is in guessedLetters
+            Add letter to result
+        Else
+            Add "_" to result
+    Return result
+
+Function isWordComplete(word, guessedLetters)
+    For each letter IN word
+        If letter is not in guessedLetters
+            Return false
+    Return true
+
+Function isGameOver(word, guessedLetters)
+    Return isWordComplete(word, guessedLetters)
+
+Main
+    While isGameOver(word, guessedLetters) IS false
+        Output fillInBlanks(word, guessedLetters)
+        UserInput user to enter a letter
+        Add entered letter to guessedLetters
+    Output "Congratulations! You guessed the word!"
+    UserInput "Would you like to play again? (y/n)"

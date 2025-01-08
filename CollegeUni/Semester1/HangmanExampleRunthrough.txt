@@ -1,0 +1,17 @@
+____
+Enter a letter, or guess the word:
+> a
+_a__
+Enter a letter, or guess the word:
+> b
+_a__
+Enter a letter, or guess the word:
+> d
+da__
+Enter a letter, or guess the word:
+> date
+Congratulations! You guessed the word!
+The word was: date
+You made 1 incorrect guess(es).
+Would you like to play again? (y/n)
+> n
